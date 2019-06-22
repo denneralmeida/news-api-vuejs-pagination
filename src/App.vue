@@ -90,7 +90,8 @@ export default {
     },
     updatePage(num_page){
       this.currentPage = num_page;
-      this.visibleArticles = this.articles.slice((num_page * 5)+1, (num_page * 5) + 6);
+      let index = num_page === 0 ? 0 : 1;
+      this.visibleArticles = this.articles.slice((num_page * 5)+index, (num_page * 5) + 6);
     },
     reset(){
       this.total_results = 0;
